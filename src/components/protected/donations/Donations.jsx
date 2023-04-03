@@ -58,7 +58,7 @@ const Donations = () => {
                     <div className='w-full col-span-8 lg:col-span-7 px-4 lg:px-10'>
                         <Pagetitle icon={<FaDonate />} />
                         <div className='my-0'>
-                            <div className='flex justify-start space-x-2 md:space-x-0 md:justify-between border-b border-gray-200 dark:border-gray-900 py-4'>
+                            <div className='grid md:flex justify-start md:space-x-0 md:justify-between border-b border-gray-200 dark:border-gray-900 py-4'>
 
                                 <div className='grid md:flex justify-start md:space-x-24'>
                                     {/* FILTER SECTION */}
@@ -93,10 +93,10 @@ const Donations = () => {
                                 </div>                                
 
                                 {/* ADD DONATION SECTION */}
-                                <div className='flex pt-2 md:pt-0'>
+                                <div className='flex pt-2 mt-[-20px] md:pt-0'>
                                     {(user && user.role === 'admin') &&
                                         <Link
-                                            className='h-[38px] px-6 mt-16 md:mt-0 bg-transparent dark:bg-slate-500 dark:text-white p-2 border border-slate-500 text-slate-500 text-sm rounded-full flex justify-center space-x-1 hover:bg-slate-500 hover:text-white hover:dark:bg-transparent hover:dark:text-slate-500'
+                                            className='h-[38px] px-6 bg-transparent dark:bg-slate-500 dark:text-white p-2 border border-slate-500 text-slate-500 text-sm rounded-full flex justify-center space-x-1 hover:bg-slate-500 hover:text-white hover:dark:bg-transparent hover:dark:text-slate-500'
                                             to='/new-donation'
                                         >
                                             Donate
