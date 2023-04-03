@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { SlRefresh } from 'react-icons/sl'
-import { BsPlusLg } from 'react-icons/bs'
 import { FaDonate } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { allDonations, filterDonations } from '../../../actions/donationsActions'
