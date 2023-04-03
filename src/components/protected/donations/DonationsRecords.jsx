@@ -117,7 +117,7 @@ const DonationsRecords = ({ donations }) => {
             {/* SEARCH COMPONENT */}
             {(donations !== null && donations !== undefined && donations.length > 0) && 
                 <div className='w-full grid md:flex justify-between my-4'>
-                    <div className='flex justify-start bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-2 space-x-5 md:space-x-12 text-sm text-gray-500 dark:text-gray-400 mb-3 md:mb-0'>
+                    <div className='flex justify-start bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-2 space-x-2 md:space-x-12 text-sm text-gray-500 dark:text-gray-400 mb-3 md:mb-0'>
                         <div>Count : <span className='font-medium text-slate-500'>{donationsData.length}</span></div>
                         <div>Pledge : <span className='font-medium text-red-500'>&#8358; {totalpledge}</span></div>
                         <div>Paid : <span className='font-medium text-green-500'>&#8358; {totalpaid}</span></div>
