@@ -59,7 +59,7 @@ const Donations = () => {
                     <div className='w-full col-span-8 lg:col-span-7 px-4 lg:px-10'>
                         <Pagetitle icon={<FaDonate />} />
                         <div className='my-0'>
-                            <div className='flex justify-start space-x-6 md:justify-between border-b border-gray-200 dark:border-gray-900 py-4'>
+                            <div className='flex justify-start space-x-3 md:space-x-0 md:justify-between border-b border-gray-200 dark:border-gray-900 py-4'>
 
                                 <div className='grid md:flex justify-start md:space-x-24'>
                                     {/* FILTER SECTION */}
