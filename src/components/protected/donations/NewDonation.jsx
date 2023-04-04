@@ -110,7 +110,7 @@ export const NewDonation = () => {
                     <div className='w-full grid grid-cols-1 md:grid-cols-5'>
                         <div className='col-span-1 text-gray-700 dark:text-gray-500 text-sm'>
                             <select
-                                className="bg-transparent mt-3 p-2 border border-slate-400 dark:border-slate-700"
+                                className="md:w-[90%] bg-transparent mt-3.5 p-2 border border-slate-400 dark:border-slate-700"
                                 onChange={(e) => setSearch(e.target.value)}
                                 required
                             >
