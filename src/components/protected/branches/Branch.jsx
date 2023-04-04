@@ -48,7 +48,7 @@ const Branch = ({ brnch }) => {
                 <td className='py-3 px-3 whitespace-nowrap'>{brnch.email}</td>
                 <td className='py-3 px-3 whitespace-nowrap'><Moment format='MMMM Do YYYY'>{brnch.created_at}</Moment></td>
                 <td className='py-3 px-3 whitespace-nowrap flex'>
-                    {(user && user.groupid === 0 && user.role === 'admin') &&
+                    {(user && user.groupid === "0" && user.role === 'admin') &&
                         <Fragment>
                             <span 
                                 className='px-2 pt-2 text-[#00df9a] cursor-pointer'

@@ -126,7 +126,7 @@ const Branches = () => {
                     <div className='w-full px-2 lg:px-4 my-8'>
 
                         {/* Display an add button if user has enough privilege*/}
-                        {(user && user.groupid === 0 && role === 'admin') &&
+                        {(user && user.groupid === "0" && role === 'admin') &&
                             <div className='flex justify-end my-2'>
                                 <button
                                     className='w-[120px] bg-transparent dark:bg-slate-500 dark:text-white p-2 border border-slate-500 text-slate-500 text-sm rounded-full flex justify-center space-x-1'

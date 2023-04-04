@@ -81,7 +81,7 @@ const Mmember = ({ membr }) => {
                                         <AiOutlineEdit size={15} />
                                     </span>
                                 }
-                                {(user && user.groupid === 0 && user.role === 'admin') &&
+                                {(user && user.groupid === "0" && user.role === 'admin') &&
                                     <span 
                                         className='px-2 pt-4 text-[red] cursor-pointer'
                                         onClick={deleteMembr}
