@@ -62,9 +62,9 @@ const Donations = () => {
 
                                 <div className='grid md:flex justify-start md:space-x-24'>
                                     {/* FILTER SECTION */}
-                                    <div className='flex justify-between space-x-4'>
+                                    <div className='flex space-x-4'>
                                         
-                                        <div className='mr-[270px] mb-12 md:mb-0'>
+                                        <div className='mr-[220px] md:mr-[250px] mb-12 md:mb-0'>
                                             <FilterEvents setEvent={setEvent} clear={clear} />
                                         </div>
                                         <div className='mb-12 md:mb-0'>    
@@ -93,7 +93,7 @@ const Donations = () => {
                                 </div>                                
 
                                 {/* ADD DONATION SECTION */}
-                                <div className='flex pt-2 mt-[-20px] md:pt-0'>
+                                <div className='flex pt-2 mt-[-20px] md:mt-0 md:pt-0'>
                                     {(user && user.role === 'admin') &&
                                         <Link
                                             className='h-[38px] px-6 bg-transparent dark:bg-slate-500 dark:text-white p-2 border border-slate-500 text-slate-500 text-sm rounded-full flex justify-center space-x-1 hover:bg-slate-500 hover:text-white hover:dark:bg-transparent hover:dark:text-slate-500'

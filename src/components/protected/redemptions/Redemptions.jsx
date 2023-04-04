@@ -97,7 +97,7 @@ const Redemptions = ({ donation, setForm }) => {
                             {error !== null && <div className='text-left text-sm text-red-500 py-2'>{error}</div>}
                             
                         </div>
-                        {(user && user.role) &&
+                        {(user && user.role === 'admin') &&
                             <div className='my-1 px-1 border-b border-gray-200 py-4'>
                                 <div className='text-md mb-1 flex justify-start text-slate-500'>Redeem pledge</div>
                                 <form onSubmit={handleSubmit}>

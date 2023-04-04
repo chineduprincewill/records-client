@@ -62,7 +62,7 @@ export const FilterEvents = ({ setEvent, clear }) => {
         <div className='absolute'>
             <input
                 type="text"
-                className="w-[250px] bg-transparent p-2 border border-gray-400 dark:border-slate-700 dark:text-gray-500 text-sm"
+                className="w-[220px] md:w-[250px] bg-transparent p-2 border border-gray-400 dark:border-slate-700 dark:text-gray-500 text-sm"
                 value={isSelected ? selected : filtered}
                 placeholder="Type and click on event to select"
                 onChange={(e) => updateFilter(e.target.value)}
