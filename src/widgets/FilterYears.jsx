@@ -56,9 +56,9 @@ export const FilterYears = ({ setYear, clear }) => {
         <div className='absolute'>
             <input
                 type="text"
-                className="w-[70px] bg-transparent p-2 border border-gray-400 dark:border-slate-700 dark:text-gray-400 text-sm"
+                className="w-[80px] bg-transparent p-2 border border-gray-400 dark:border-slate-700 dark:text-gray-400 text-sm"
                 value={isSelected ? selected : filtered}
-                placeholder="Year"
+                placeholder="Type year"
                 onChange={(e) => updateFilter(e.target.value)}
             />
             <div className='relative inset-0 z-10 overflow-y-auto w-[70px]'>

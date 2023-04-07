@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
-import { AiOutlineClear, AiOutlineCloseCircle, AiOutlinePlus, AiOutlineSend } from 'react-icons/ai';
+import { AiOutlineCloseCircle, AiOutlinePlus, AiOutlineSend } from 'react-icons/ai';
 import { FaDonate } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import FilterEvents from '../../../widgets/FilterEvents';
@@ -13,6 +13,7 @@ import NewmemberForm from '../members/NewmemberForm'
 import { BsToggleOff, BsToggleOn } from 'react-icons/bs';
 import { createDonation } from '../../../actions/donationsActions';
 import { AuthContext } from '../../../context/AuthContext';
+import NextSearch from './NextSearch';
 
 export const NewDonation = () => {
 
@@ -32,8 +33,7 @@ export const NewDonation = () => {
     const [error, setError] = useState(null);
 
     const [submitting, setSubmitting] = useState(false);
-    const [search, setSearch] = useState('');
-    const [clear, setClear] = useState(false);
+    const [search, setSearch] = useState('event');
 
     const [newevent, setNewevent] = useState(false);
     const [newmember, setNewmember] = useState(false);
@@ -50,9 +50,20 @@ export const NewDonation = () => {
 
     if(search !== null){
 
-        search === 'event' && (stage = <div className='flex space-x-64'><FilterEvents setEvent={setEvent} clear={clear} /> <AiOutlinePlus size={20} className="mt-2 text-green-500 cursor-pointer" onClick={setNewevent} title="create new event" /></div>);
-        search === 'year' && (stage = <FilterYears setYear={setYear} clear={clear} />);
-        search === 'member' && (stage = <div className='flex space-x-64'><FilterMembers setMember={setMember} clear={clear} setMemberName={setMemberName} /><AiOutlinePlus size={20} className="mt-2 text-green-500 cursor-pointer" onClick={setNewmember} title="create new member" /></div>);
+        search === 'event' && (stage = <div className='flex'>
+                <FilterEvents setEvent={setEvent} /> 
+                <NextSearch setSearch={setSearch} val={'year'} btnText={'Next'} />
+                <AiOutlinePlus size={20} className="mt-2 text-green-500 cursor-pointer" onClick={setNewevent} title="create new event" />
+            </div>);
+        search === 'year' && (stage = <div className='flex'>
+                <FilterYears setYear={setYear} />
+                <NextSearch setSearch={setSearch} val={'member'} btnText={'Next'} />
+            </div>);
+        search === 'member' && (stage = <div className='flex'>
+                <FilterMembers setMember={setMember} setMemberName={setMemberName} />
+                <NextSearch setSearch={setSearch} val={'event'} btnText={'Restart'} />
+                <AiOutlinePlus size={20} className="mt-2 text-green-500 cursor-pointer" onClick={setNewmember} title="create new member" />
+            </div>);
     }
 
     const handleSubmit = () => {
@@ -107,31 +118,9 @@ export const NewDonation = () => {
                         </div>
                     </div>
 
-                    <div className='w-full grid grid-cols-1 md:grid-cols-5'>
-                        <div className='col-span-1 text-gray-700 dark:text-gray-500 text-sm'>
-                            <select
-                                className="md:w-[90%] bg-transparent mt-3.5 p-2 border border-slate-400 dark:border-slate-700"
-                                onChange={(e) => setSearch(e.target.value)}
-                                required
-                            >
-                                <option value="">select field to fill</option>
-                                <option value="event">event</option>
-                                <option value="year">year</option>
-                                <option value="member">member</option>
-                            </select>
-                        </div>
-                        <div className='col-span-4 flex justify-between'>
-                            <div className='mt-3 py-0.5 mb-3 md:mb-0'>
-                                {stage}     
-                            </div>
-
-                            <button
-                                className='bg-transparent py-2 mt-3 px-4 dark:bg-red-500 dark:text-white border border-red-500 text-red-500 rounded-full text-sm hover:bg-red-500 hover:text-white hover:dark:bg-transparent hover:dark:text-red-500'
-                                onClick={setClear}
-                            >
-                                <AiOutlineClear size={19} />
-                            </button>
-                        </div>
+                    <div className='py-0.5'>
+                        <p className='text-sm rounded-md text-slate-600 dark:text-gray-400 border border-gray-300 dark:border-gray-800 p-1 mb-4'>If you cannot find what you are searching for in the dropdown that appears when you type, please click on the green plus icon to add what you are searching for</p>
+                        {stage}     
                     </div>
 
                     {error && <span className='py-3 text-red-500'>{error}</span>}
