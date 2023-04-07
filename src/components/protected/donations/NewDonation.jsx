@@ -24,8 +24,8 @@ export const NewDonation = () => {
     const [member, setMember] = useState('');
     const [event, setEvent] = useState('');
     const [year, setYear] = useState('');
-    const [donation, setDonation] = useState();
-    const [completepay, setCompletepay] = useState();
+    const [donation, setDonation] = useState('');
+    const [completepay, setCompletepay] = useState('');
     const [recorder, setRecorder] = useState('self');
     const [memberName, setMemberName] = useState();
 
