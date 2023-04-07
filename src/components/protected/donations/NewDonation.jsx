@@ -119,7 +119,7 @@ export const NewDonation = () => {
                     </div>
 
                     <div className='py-0.5'>
-                        <p className='text-sm rounded-md text-slate-600 dark:text-gray-400 border border-gray-300 dark:border-gray-800 p-1 mb-4'>If you cannot find what you are searching for in the dropdown that appears when you type, please click on the green plus icon to add what you are searching for</p>
+                        <p className='text-sm rounded-md bg-gray-100 text-slate-500 dark:bg-gray-900 dark:text-gray-500 border border-gray-200 dark:border-gray-800 px-2 py-1 mb-5'>If you cannot find what you are searching for in the dropdown that appears when you type, please click on the green plus icon to add what you are searching for</p>
                         {stage}     
                     </div>
 
