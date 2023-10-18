@@ -17,8 +17,8 @@ export const getMembers = async ( token, setMembers, setError ) => {
         if (!err?.response) {
             setError('No Response from Server');
         } else {
-            console.log(err.response.data);
-            setError(err.response.data.error);
+            console.log(err.response.data?.message);
+            setError(err.response.data?.message);
         }
     }
     

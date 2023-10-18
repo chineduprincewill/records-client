@@ -126,7 +126,7 @@ const Branches = () => {
                     <div className='w-full px-2 lg:px-4 my-8'>
 
                         {/* Display an add button if user has enough privilege*/}
-                        {(user && user.groupid === "0" && role === 'admin') &&
+                        {(user && user.groupid === 0 && role === 'admin') &&
                             <div className='flex justify-end my-2'>
                                 <button
                                     className='w-[120px] bg-transparent dark:bg-slate-500 dark:text-white p-2 border border-slate-500 text-slate-500 text-sm rounded-full flex justify-center space-x-1'
@@ -169,8 +169,8 @@ const Branches = () => {
                     {error && <p className='text-sm font-medium text-red-700'>{error}</p>}
 
                     {/* Diplay data in table or cards depending on the screen size */}
-                    {branches === null ? <Spinner w='250' /> : 
-                        branches === undefined ? 
+                    {branches === null && error !== 'Token has expired' ? <Spinner w='250' /> : 
+                        branches === undefined || (error !== null && error === 'Token has expired') ? 
                             logout() :
                             <Fragment>
                                 {/* LARGE SCREEN */}

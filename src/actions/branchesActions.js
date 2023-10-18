@@ -18,7 +18,7 @@ export const getBranches = async ( token, setBranches, setError ) => {
             setError('No Response from Server');
         } else {
             console.log(err.response.data);
-            setError(err.response.data.error);
+            setError(err.response.data?.message);
         }
     }
     

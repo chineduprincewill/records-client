@@ -14,7 +14,7 @@ export const NewmemberForm = ({ setForm, setIsCreated }) => {
     const [firstname, setFirstname] = useState('');
     const [othernames, setOthernames] = useState('');
     const [gender, setGender] = useState('');
-    const [branchid, setBranchid] = useState();
+    const [branchid, setBranchid] = useState(user && user?.groupid);
     const [wing, setWing] = useState('');
     const [mobile, setMobile] = useState('')
     const [email, setEmail] = useState('');

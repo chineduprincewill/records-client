@@ -18,7 +18,7 @@ const Dashboard = () => {
                 <Sidebar />
                 <div className='w-full lg:col-span-7 lg:px-10'>
                     <Pagetitle icon={<AiOutlineDashboard />} />
-                    {(user && user.groupid === "0" && user.role === 'admin') && <SuperAdmin />}
+                    {(user && user.groupid === 0 && user.role === 'admin') && <SuperAdmin />}
                 </div>
             </div>  
         </div>

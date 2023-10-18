@@ -17,7 +17,7 @@ export const getEvents = async ( token, setEvents, setError ) => {
             setError('No Response from Server');
         } else {
             console.log(err.response.data);
-            setError(err.response.data.error);
+            setError(err.response.data?.message);
         }
     }
     

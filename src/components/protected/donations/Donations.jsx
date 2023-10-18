@@ -108,13 +108,11 @@ const Donations = () => {
                         <div className='my-4'>
                                 {error !== null && <span className='my-2 text-red-500'>{error}</span>}
                                 {
-                                    fetching ? <Spinner w={180} /> :
-                                        donations !== null && (
-                                            donations === undefined ? logout() : (
-                                                donations.length === 0 ? <span className='my-2 text-red-500'>No records found!</span> : 
-                                                    <DonationsRecords donations={donations} />
-                                            )
-                                        ) 
+                                    (donations === null && error !== 'Token has expired') || fetching ? <Spinner w={180} /> :
+                                        donations === undefined || (error !== null && error === 'Token has expired') ? logout() : (
+                                            donations.length === 0 ? <span className='my-2 text-red-500'>No records found!</span> : 
+                                                <DonationsRecords donations={donations} />
+                                        )
                                 }
                         </div>
                     </div>

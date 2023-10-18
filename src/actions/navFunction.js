@@ -8,22 +8,22 @@ export const generateLinks = (user, role) => {
 
     let navLinks;
 
-    if(user && user.groupid === "0" && role === 'admin'){
+    if(user && user.groupid === 0 && role === 'admin'){
         navLinks = system_admin.map((link) => (
             <NavItem link={link} key={link.id} />
         ))
     }
-    else if(user && user.groupid === "0" && role === 'auditor'){
+    else if(user && user.groupid === 0 && role === 'auditor'){
         navLinks = system_auditor.map((link) => (
             <NavItem link={link} key={link.id} />
         ))
     }
-    else if(user && user.groupid > "0" && role === 'admin'){
+    else if(user && user.groupid > 0 && role === 'admin'){
         navLinks = admin.map((link) => (
             <NavItem link={link} key={link.id} />
         ))
     }
-    else if(user && user.groupid > "0" && role === 'auditor'){
+    else if(user && user.groupid > 0 && role === 'auditor'){
         navLinks = auditor.map((link) => (
             <NavItem link={link} key={link.id} />
         ))

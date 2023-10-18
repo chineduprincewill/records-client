@@ -189,8 +189,8 @@ const Members = () => {
                         {error && <p className='text-sm font-medium text-red-700'>{error}</p>}
 
                         {/* Diplay data in table or cards depending on the screen size */}
-                        {members === null ? <Spinner w='250' /> : 
-                            members === undefined ? 
+                        {members === null && error !== 'Token has expired' ? <Spinner w='250' /> : 
+                            members === undefined || (error !== null && error === 'Token has expired') ? 
                                 logout() :
                                 <Fragment>
                                     {/* LARGE SCREEN */}

@@ -72,7 +72,7 @@ const MBranch = ({ brnch }) => {
                     <div className='col-span-9 flex justify-between'>
                         <span className='text-slate-500 my-2.5'>{brnch.title}</span>
                         <div className='flex justify-end'>
-                        {(user && user.groupid === "0" && user.role === 'admin') &&
+                        {(user && user.groupid === 0 && user.role === 'admin') &&
                             <Fragment>
                                 <span 
                                     className='px-2 pt-4 text-[#00df9a] cursor-pointer'

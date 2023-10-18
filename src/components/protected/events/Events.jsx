@@ -148,8 +148,8 @@ const Events = () => {
                     {error && <p className='text-sm font-medium text-red-700'>{error}</p>}
 
                     
-                    {events === null ? <Spinner w='250' /> : 
-                        events === undefined ? 
+                    {events === null && error !== 'Token has expired' ? <Spinner w='250' /> : 
+                        events === undefined || (error !== null && error === 'Token has expired') ? 
                             logout() :
                             <Fragment>
                                 {/* LARGE SCREEN */}

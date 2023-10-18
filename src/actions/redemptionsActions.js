@@ -21,8 +21,8 @@ export const getDonationRedemptions = async ( token, id, setRedemptions, setErro
         if (!err?.response) {
             setError('No Response from Server');
         } else {
-            console.log(err.response.data.error);
-            setError(err.response.data.error);
+            console.log(err.response.data);
+            setError(err.response.data?.message);
         }
     }
 }
